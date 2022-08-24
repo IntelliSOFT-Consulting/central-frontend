@@ -11,7 +11,14 @@ except according to the terms contained in the LICENSE file.
 -->
 <template>
   <div>
-    <div id="home-heading">{{ $t('heading[0]') }}</div>
+    <div id="home-heading" class="heading-section">
+      {{ $t('heading[0]') }}
+      <div class="logos">
+        <img src="../assets/img/pmi.png" alt="PMI">
+        <img src="../assets/img/moh.png" alt="MOH">
+        <img src="../assets/img/pmi2.png" alt="kinga-malaria">
+      </div>
+    </div>
     <home-summary/>
     <div id="home-news-container">
       <home-news/>
@@ -67,6 +74,7 @@ export default {
   margin-left: -15px;
   margin-right: -15px;
   padding: 20px 15px 15px 15px;
+
 }
 
 #home-news-container {

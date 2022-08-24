@@ -12,7 +12,8 @@ except according to the terms contained in the LICENSE file.
 <template>
   <div id="page-back" class="row">
     <div class="col-xs-12">
-      <div>
+      <div class="heading-section">
+        <div>
         <span id="page-back-title">
           <router-link v-if="linkTitle" :to="to">
             <slot name="title"></slot>
@@ -24,6 +25,12 @@ except according to the terms contained in the LICENSE file.
         <router-link id="page-back-back" :to="to">
           <slot name="back"></slot>
         </router-link>
+        </div>
+        <div class="logos">
+        <img src="../../assets/img/pmi.png" alt="PMI">
+        <img src="../../assets/img/moh.png" alt="MOH">
+        <img src="../../assets/img/pmi2.png" alt="kinga-malaria">
+      </div>
       </div>
     </div>
   </div>
@@ -49,7 +56,7 @@ export default {
   .col-xs-12 div {
     $background-color: #ddd;
     background-color: $background-color;
-    border-bottom: 2px solid $color-subpanel-background;
+    // border-bottom: 2px solid $color-subpanel-background;
     font-size: 18px;
     margin: 0 -15px;
     padding: 15px;

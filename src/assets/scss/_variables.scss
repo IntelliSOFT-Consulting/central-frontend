@@ -11,8 +11,8 @@ except according to the terms contained in the LICENSE file.
 */
 
 // Core
-$color-accent-primary: #bd006b;
-$color-accent-secondary: #8d0050;
+$color-accent-primary: #02097e;
+$color-accent-secondary: #020763;
 $color-page-background: #f7f7f7;
 
 // Text
@@ -31,14 +31,14 @@ $color-info-light: #d9edf7;
 $color-info-dark: darken($color-info, 10%);
 $color-warning: #f29e00;
 $color-warning-light: #f5c93b;
-$color-danger: #de2a11;
+$color-danger: #CE153F;
 $color-danger-light: #ffe6e6;
 $color-danger-dark: darken($color-danger, 10%);
 
 // Buttons and inputs
 $color-action-foreground: #0c7bd1;
-$color-action-background: #009ecc;
-$color-action-background-hover: #0086ad;
+$color-action-background: #CE153F;
+$color-action-background-hover: #CE153F;
 $color-action-background-disabled: #999;
 $color-action-overlay: #0096c1;
 $color-input: #555;

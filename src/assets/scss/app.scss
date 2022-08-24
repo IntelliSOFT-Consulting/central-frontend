@@ -25,19 +25,26 @@ body {
 
   // Always show the scrollbar in order to prevent content shifting to the left.
   overflow-y: scroll;
-  &.modal-open { overflow-y: hidden; }
+  &.modal-open {
+    overflow-y: hidden;
+  }
 
-  &:lang(ja) { font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+  &:lang(ja) {
+    font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  }
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 30px;
   font-weight: bold;
   letter-spacing: -0.02em;
   margin-bottom: 3px;
 }
 
-p { @include text-block; }
+p {
+  @include text-block;
+}
 
 dl div {
   display: flex;
@@ -47,7 +54,9 @@ dl div {
   padding-bottom: 10px;
   padding-top: 10px;
 
-  &:first-child { padding-top: 0; }
+  &:first-child {
+    padding-top: 0;
+  }
 
   &:last-child {
     border-bottom: none;
@@ -60,13 +69,17 @@ dt {
   font-weight: normal;
 }
 
-dd { font-size: 16px; }
+dd {
+  font-size: 16px;
+}
 
 pre {
   background-color: $color-subpanel-background;
   border-color: $color-subpanel-border;
 
-  code { white-space: pre; }
+  code {
+    white-space: pre;
+  }
 }
 
 em:lang(ja) {
@@ -74,12 +87,12 @@ em:lang(ja) {
   font-weight: bold;
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // ICONS
 
-[class^="icon-"] { vertical-align: -1px; }
+[class^='icon-'] {
+  vertical-align: -1px;
+}
 
 /* Bootstrap has an .icon-bar class that is unrelated to IcoMoon, but our
 IcoMoon styles end up applying to it, because our IcoMoon selectors select on
@@ -103,24 +116,29 @@ class. */
   background-color: #888;
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // LINKS AND BUTTONS
 
-.btn, a {
-  .caret { margin-left: 6px; }
+.btn,
+a {
+  .caret {
+    margin-left: 6px;
+  }
 
-  > [class^="icon-"]:first-child {
+  > [class^='icon-']:first-child {
     // There should not be white space between an icon and text content that
     // follows it. For a link in particular, the underlining will be off if
     // there is white space.
     margin-right: $margin-right-icon;
 
-    + .caret { margin-left: 0; }
+    + .caret {
+      margin-left: 0;
+    }
   }
 
-  &[disabled], &.disabled, fieldset[disabled] & {
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
     cursor: not-allowed;
     opacity: 0.65;
   }
@@ -136,22 +154,37 @@ $btn-focus-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.18);
   padding: $padding-top-btn $hpadding-btn $padding-bottom-btn;
   position: relative;
 
-  &:focus, &:active:focus { outline: none; }
-  &:focus { box-shadow: $btn-focus-box-shadow; }
-  &[disabled], &.disabled, fieldset[disabled] & { box-shadow: none; }
+  &:focus,
+  &:active:focus {
+    outline: none;
+  }
+  &:focus {
+    box-shadow: $btn-focus-box-shadow;
+  }
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
+    box-shadow: none;
+  }
 }
 
 .btn-primary {
   background-color: $color-action-background;
 
-  &[disabled], &.disabled, fieldset[disabled] & {
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
     background-color: $color-action-background-disabled;
   }
 
-  &:hover, &:focus, &:active:focus {
+  &:hover,
+  &:focus,
+  &:active:focus {
     background-color: $color-action-background-hover;
 
-    &[disabled], &.disabled, fieldset[disabled] & {
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
       background-color: $color-action-background-disabled;
     }
   }
@@ -160,26 +193,46 @@ $btn-focus-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.18);
 .btn-default {
   background-color: #ddd;
 
-  &:hover, &:focus, &:active:focus {
+  &:hover,
+  &:focus,
+  &:active:focus {
     background-color: #ccc;
-    &[disabled], &.disabled, fieldset[disabled] & { background-color: #ddd; }
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
+      background-color: #ddd;
+    }
   }
 
-  > [class^="icon-"]:first-child { color: $color-action-background; }
+  > [class^='icon-']:first-child {
+    color: $color-action-background;
+  }
 }
 
 .btn-danger {
   background-color: $color-danger;
 
-  &:hover, &:focus, &:active:focus {
+  &:hover,
+  &:focus,
+  &:active:focus {
     background-color: $color-danger-dark;
-    &[disabled], &.disabled, fieldset[disabled] { background-color: $color-danger; }
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] {
+      background-color: $color-danger;
+    }
   }
 }
 
-a, .btn-link {
-  &, &:hover { color: $color-action-foreground; }
-  &:hover { text-decoration: none; }
+a,
+.btn-link {
+  &,
+  &:hover {
+    color: $color-action-foreground;
+  }
+  &:hover {
+    text-decoration: none;
+  }
 
   &:focus {
     background-color: transparentize(#000, 0.94);
@@ -187,29 +240,37 @@ a, .btn-link {
     text-decoration: underline;
   }
 
-  &.disabled, &[disabled], fieldset[disabled] & {
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
     color: #888;
     text-decoration: none;
   }
 }
 
 a {
-  &.disabled, fieldset[disabled] & {
+  &.disabled,
+  fieldset[disabled] & {
     // Not specifying pointer-events so that the cursor and any title attribute
     // is shown.
 
-    &.btn { color: #fff; }
+    &.btn {
+      color: #fff;
+    }
   }
 
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
 
-  &, &:visited {
+  &,
+  &:visited {
     @media print {
       text-decoration: none;
     }
   }
 
-  > [class^="icon-"]:first-child {
+  > [class^='icon-']:first-child {
     // Using inline-block so that the icon is not underlined even when the link
     // has `text-decoration: underline`.
     display: inline-block;
@@ -223,7 +284,9 @@ a {
 .btn-link {
   border-radius: 0;
 
-  &, &:active, &[disabled] fieldset[disabled] & {
+  &,
+  &:active,
+  &[disabled] fieldset[disabled] & {
     background-color: transparent;
   }
 
@@ -238,14 +301,25 @@ a {
   position: relative;
   vertical-align: middle;
 
-  .dropdown-toggle:active, &.open .dropdown-toggle { outline: none; }
-  &.open .dropdown-toggle:focus { box-shadow: $btn-focus-box-shadow; }
+  .dropdown-toggle:active,
+  &.open .dropdown-toggle {
+    outline: none;
+  }
+  &.open .dropdown-toggle:focus {
+    box-shadow: $btn-focus-box-shadow;
+  }
 
   > .btn {
     float: left;
 
-    &:hover, &:focus, &:active { z-index: 2; }
-    &:focus { box-shadow: none; }
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 2;
+    }
+    &:focus {
+      box-shadow: none;
+    }
 
     + .dropdown-toggle {
       padding-left: 8px;
@@ -260,15 +334,16 @@ a {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
-  > .btn:last-child:not(:first-child), > .dropdown-toggle:not(:first-child) {
+  > .btn:last-child:not(:first-child),
+  > .dropdown-toggle:not(:first-child) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
 
-  > .btn-default + .btn-default { border-left: 1px solid #ccc; }
+  > .btn-default + .btn-default {
+    border-left: 1px solid #ccc;
+  }
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // DROPDOWN MENUS
@@ -283,8 +358,6 @@ a {
   }
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // FORMS
 
@@ -297,18 +370,24 @@ fieldset {
   &[disabled] {
     opacity: 0.5;
     // Do not additionally dim a nested disabled fieldset.
-    fieldset[disabled] & { opacity: 1; }
+    fieldset[disabled] & {
+      opacity: 1;
+    }
   }
 }
 
-input[type="radio"], input[type="checkbox"], input[type="file"] {
+input[type='radio'],
+input[type='checkbox'],
+input[type='file'] {
   &:focus {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
   }
 }
 
-select[multiple] { height: auto; }
+select[multiple] {
+  height: auto;
+}
 
 .help-block {
   color: #737373;
@@ -346,13 +425,23 @@ $form-group-padding-bottom: 15px;
       box-shadow: none;
     }
 
-    &::placeholder { color: $color-text; }
-
-    &[disabled], &[readonly], fieldset[disabled] & {
-      &, &::placeholder { color: $color-input-inactive; }
+    &::placeholder {
+      color: $color-text;
     }
 
-    &[disabled], fieldset[disabled] & { cursor: not-allowed; }
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+      &,
+      &::placeholder {
+        color: $color-input-inactive;
+      }
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+      cursor: not-allowed;
+    }
   }
 
   .form-label {
@@ -365,7 +454,9 @@ $form-group-padding-bottom: 15px;
     transition: 0.15s transform, 0.15s color;
   }
   .form-control {
-    &:placeholder-shown ~ .form-label { transform: translateY(-15px); }
+    &:placeholder-shown ~ .form-label {
+      transform: translateY(-15px);
+    }
   }
 
   .close {
@@ -376,18 +467,26 @@ $form-group-padding-bottom: 15px;
     top: 5px;
     z-index: $form-control-z-index + 1;
 
-    &:hover, &:focus { opacity: 0.2; }
+    &:hover,
+    &:focus {
+      opacity: 0.2;
+    }
   }
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
   margin: 4px 0 0;
   line-height: normal;
 
-  &[disabled], fieldset[disabled] & { cursor: not-allowed; }
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
 }
 
-.radio, .checkbox {
+.radio,
+.checkbox {
   @include text-block;
   display: block;
   margin-bottom: 10px;
@@ -405,7 +504,8 @@ input[type="radio"], input[type="checkbox"] {
     }
   }
 
-  &.disabled label, fieldset[disabled] & label {
+  &.disabled label,
+  fieldset[disabled] & label {
     cursor: not-allowed;
     color: $color-input-inactive;
   }
@@ -418,14 +518,20 @@ input[type="radio"], input[type="checkbox"] {
   margin-top: 10px;
 }
 
-.radio + .radio, .checkbox + .checkbox { margin-top: -5px; }
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: -5px;
+}
 
-.radio input[type="radio"], .checkbox input[type="checkbox"] {
+.radio input[type='radio'],
+.checkbox input[type='checkbox'] {
   position: absolute;
   margin-left: -20px;
 }
 
-.checkbox label { cursor: pointer; }
+.checkbox label {
+  cursor: pointer;
+}
 
 select {
   // We want to specify `appearance: auto;` for Chrome and Firefox and
@@ -439,7 +545,9 @@ select {
   margin-bottom: 15px;
   padding-bottom: $form-group-padding-bottom;
 
-  .form-group, .radio, .checkbox {
+  .form-group,
+  .radio,
+  .checkbox {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
@@ -448,7 +556,9 @@ select {
   .form-group {
     padding-bottom: 0;
 
-    + .form-group { margin-left: 10px; }
+    + .form-group {
+      margin-left: 10px;
+    }
   }
 
   .form-control {
@@ -457,10 +567,13 @@ select {
     width: auto;
   }
 
-  .radio, .checkbox {
+  .radio,
+  .checkbox {
     margin-top: 0;
 
-    label { padding-left: 0; }
+    label {
+      padding-left: 0;
+    }
 
     input {
       margin-left: 0;
@@ -493,7 +606,9 @@ select {
     color: $color-danger;
   }
 
-  .form-control:focus ~ .form-label { color: $color-danger-dark; }
+  .form-control:focus ~ .form-label {
+    color: $color-danger-dark;
+  }
 }
 
 // In Safari, the effect of this class is not visible on input and select
@@ -501,14 +616,14 @@ select {
 .uncommitted-change {
   // Adding `.form-group &` for specificity reasons, in order to override the
   // styles on .form-group .form-control.
-  &, .form-group & {
-    &, &:focus {
+  &,
+  .form-group & {
+    &,
+    &:focus {
       box-shadow: 0 0 0 3px #ffef67;
     }
   }
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // TABLES
@@ -530,7 +645,7 @@ select {
     > tr > td {
       border-top: $border-top-table-data;
       padding: $padding-top-table-data $padding-right-table-data
-               $padding-bottom-table-data $padding-left-table-data;
+        $padding-bottom-table-data $padding-left-table-data;
     }
   }
 
@@ -574,16 +689,12 @@ select {
   font-size: 15px;
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // LABELS
 
 .label-primary {
   background-color: $color-action-background;
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // PAGE STRUCTURE
@@ -599,7 +710,8 @@ becomes more complicated.
 */
 
 // .heading-with-button is deprecated: use .page-body-heading instead.
-.page-body-heading, .heading-with-button {
+.page-body-heading,
+.heading-with-button {
   margin-bottom: 25px;
 
   > .btn {
@@ -607,10 +719,10 @@ becomes more complicated.
     margin-left: 20px;
   }
 
-  ul { @include text-list; }
+  ul {
+    @include text-list;
+  }
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // PANELS
@@ -682,8 +794,8 @@ becomes more complicated.
   }
 
   .panel-body {
-    padding: 14px $padding-right-table-data
-             $padding-bottom-table-data $padding-left-table-data;
+    padding: 14px $padding-right-table-data $padding-bottom-table-data
+      $padding-left-table-data;
 
     hr {
       // An <hr> styles the break between two sections of a
@@ -691,7 +803,7 @@ becomes more complicated.
       // .table. We want the <hr> to stretch across the entire width of the
       // .panel-body, hence the negative left and right margins.
       margin: $padding-bottom-table-data (-$padding-right-table-data)
-              $padding-top-table-data (-$padding-left-table-data);
+        $padding-top-table-data (-$padding-left-table-data);
       border-top: $border-top-table-data;
     }
   }
@@ -709,8 +821,6 @@ becomes more complicated.
   }
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // NAVS
 
@@ -721,8 +831,11 @@ becomes more complicated.
     margin-bottom: -1px;
     margin-right: 10px;
 
-    > a, &.active > a {
-      &, &:hover, &:focus {
+    > a,
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
         border: none;
         border-bottom: 2px solid transparent;
         border-radius: 0;
@@ -736,7 +849,9 @@ becomes more complicated.
     }
 
     > a {
-      &, &:hover, &:focus {
+      &,
+      &:hover,
+      &:focus {
         background-color: transparent;
       }
 
@@ -750,7 +865,9 @@ becomes more complicated.
     }
 
     &.active > a {
-      &, &:hover, &:focus {
+      &,
+      &:hover,
+      &:focus {
         background-color: $color-subpanel-background;
         border-bottom-color: $color-accent-primary;
       }
@@ -764,7 +881,8 @@ becomes more complicated.
       > a {
         pointer-events: none;
 
-        &, &:focus {
+        &,
+        &:focus {
           color: #999;
         }
 
@@ -772,6 +890,20 @@ becomes more complicated.
           border-bottom-color: transparent;
         }
       }
+    }
+  }
+}
+
+.heading-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logos {
+    display: flex;
+    height: 100%;
+    img {
+      height: 40px;
+      margin-left: 1rem;
     }
   }
 }

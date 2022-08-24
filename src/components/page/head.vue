@@ -12,7 +12,13 @@ except according to the terms contained in the LICENSE file.
 <template>
   <div id="page-head" class="row">
     <div class="col-xs-12">
-      <div id="page-head-title" class="h1"><slot name="title"></slot></div>
+      <div id="page-head-title" class="h1 heading-section"><slot name="title"></slot>
+       <div class="logos">
+        <img src="../../assets/img/pmi.png" alt="PMI">
+        <img src="../../assets/img/moh.png" alt="MOH">
+        <img src="../../assets/img/pmi2.png" alt="kinga-malaria">
+      </div>
+      </div>
       <p id="page-head-body"><slot name="body"></slot></p>
       <ul id="page-head-tabs" class="nav nav-tabs">
         <slot name="tabs"></slot>

@@ -28,6 +28,12 @@ except according to the terms contained in the LICENSE file.
         {{ $t('common.system') }} <span class="sr-only">{{ $t('current') }}</span>
       </router-link>
     </li>
+        <li v-if="canRoute(systemPath)"
+      :class="{ active: routePathStartsWith('/reports') }">
+      <a href="https://kinga-malaria-reports.intellisoftkenya.com" target="_blank">
+        Reports <span class="sr-only">{{ $t('current') }}</span>
+      </a>
+    </li>
   </ul>
 </template>
 

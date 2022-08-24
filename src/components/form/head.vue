@@ -32,57 +32,51 @@ except according to the terms contained in the LICENSE file.
               <!-- Using rendersFormTabs rather than canRoute(), because we want
               to render the tabs even if the form does not have a published
               version (in which case canRoute() will return `false`). -->
-              <li v-if="rendersFormTabs" :class="formTabClass('')"
-                :title="formTabTitle" role="presentation">
+              <li v-if="rendersFormTabs" :class="formTabClass('')" :title="formTabTitle" role="presentation">
                 <router-link :to="tabPath('')">
                   {{ $t('common.tab.overview') }}
                 </router-link>
               </li>
               <!-- No v-if, because anyone who can navigate to the form should
               be able to navigate to .../versions and .../submissions. -->
-              <li :class="formTabClass('versions')" :title="formTabTitle"
-                role="presentation">
+              <li :class="formTabClass('versions')" :title="formTabTitle" role="presentation">
                 <router-link :to="tabPath('versions')">
                   {{ $t('formHead.tab.versions') }}
                 </router-link>
               </li>
-              <li :class="formTabClass('submissions')" :title="formTabTitle"
-                role="presentation">
+              <li :class="formTabClass('submissions')" :title="formTabTitle" role="presentation">
                 <router-link :to="tabPath('submissions')">
                   {{ $t('resource.submissions') }}
                 </router-link>
               </li>
-              <li v-if="rendersFormTabs" :class="formTabClass('public-links')"
-                :title="formTabTitle" role="presentation">
+              <li v-if="rendersFormTabs" :class="formTabClass('public-links')" :title="formTabTitle"
+                role="presentation">
                 <router-link :to="tabPath('public-links')">
                   {{ $t('formHead.tab.publicAccess') }}
                 </router-link>
               </li>
-              <li v-if="rendersFormTabs" :class="formTabClass('settings')"
-                :title="formTabTitle" role="presentation">
+              <li v-if="rendersFormTabs" :class="formTabClass('settings')" :title="formTabTitle" role="presentation">
                 <router-link :to="tabPath('settings')">
                   {{ $t('common.tab.settings') }}
                 </router-link>
               </li>
             </ul>
           </div>
-          <div v-if="rendersDraftNav" id="form-head-draft-nav"
-            class="col-xs-6" :class="{ 'draft-exists': formDraft.isDefined() }">
+          <div v-if="rendersDraftNav" id="form-head-draft-nav" class="col-xs-6"
+            :class="{ 'draft-exists': formDraft.isDefined() }">
             <span id="form-head-draft-nav-title">{{ $t('draftNav.title') }}</span>
-            <button v-show="formDraft.isEmpty()"
-              id="form-head-create-draft-button" type="primary"
+            <button v-show="formDraft.isEmpty()" id="form-head-create-draft-button" type="primary"
               class="btn btn-primary" @click="$emit('create-draft')">
               <span class="icon-plus-circle"></span>{{ $t('draftNav.action.create') }}
             </button>
             <ul v-show="formDraft.isDefined()" class="nav nav-tabs">
-              <li v-if="canRoute(tabPath('draft'))" :class="tabClass('draft')"
-                role="presentation">
+              <li v-if="canRoute(tabPath('draft'))" :class="tabClass('draft')" role="presentation">
                 <router-link :to="tabPath('draft')">
                   {{ $t('formHead.draftNav.tab.status') }}
                 </router-link>
               </li>
-              <li v-if="canRoute(tabPath('draft/attachments'))"
-                :class="tabClass('draft/attachments')" role="presentation">
+              <li v-if="canRoute(tabPath('draft/attachments'))" :class="tabClass('draft/attachments')"
+                role="presentation">
                 <router-link :to="tabPath('draft/attachments')">
                   {{ $t('formHead.draftNav.tab.attachments') }}
                   <template v-if="attachments != null">
@@ -92,8 +86,7 @@ except according to the terms contained in the LICENSE file.
                   </template>
                 </router-link>
               </li>
-              <li v-if="canRoute(tabPath('draft/testing'))"
-                :class="tabClass('draft/testing')" role="presentation">
+              <li v-if="canRoute(tabPath('draft/testing'))" :class="tabClass('draft/testing')" role="presentation">
                 <router-link :to="tabPath('draft/testing')">
                   {{ $t('formHead.draftNav.tab.testing') }}
                 </router-link>
@@ -172,7 +165,7 @@ $tab-li-margin-top: 5px;
     margin-bottom: -10px;
   }
 
-  .nav-tabs > li {
+  .nav-tabs>li {
     // It might be simpler to move this margin to the .nav-tabs element so that
     // fewer elements have margin.
     margin-top: $tab-li-margin-top;
@@ -182,8 +175,13 @@ $tab-li-margin-top: 5px;
 #form-head-form-tabs {
   margin-top: $draft-nav-padding;
 
-  > li.active > a {
-    &, &:hover, &:focus { background-color: $color-subpanel-active; }
+  >li.active>a {
+
+    &,
+    &:hover,
+    &:focus {
+      background-color: $color-subpanel-active;
+    }
   }
 }
 
@@ -198,9 +196,13 @@ $tab-li-margin-top: 5px;
     position: absolute;
     top: 7px;
   }
+
   &.draft-exists #form-head-draft-nav-title {
-    left: /* .col-xs-6 padding-left */ 15px +
-      /* .nav-tabs > li > a padding-left */ 8px;
+    left:
+      /* .col-xs-6 padding-left */
+      15px +
+      /* .nav-tabs > li > a padding-left */
+      8px;
   }
 
   #form-head-create-draft-button {
@@ -214,8 +216,13 @@ $tab-li-margin-top: 5px;
     margin-top: $tab-li-margin-top;
   }
 
-  .nav-tabs > li.active > a {
-    &, &:hover, &:focus { background-color: $color-page-background; }
+  .nav-tabs>li.active>a {
+
+    &,
+    &:hover,
+    &:focus {
+      background-color: $color-page-background;
+    }
   }
 }
 </style>
