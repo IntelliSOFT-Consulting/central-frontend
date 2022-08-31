@@ -900,10 +900,18 @@ becomes more complicated.
   justify-content: space-between;
   .logos {
     display: flex;
-    height: 100%;
+    height: auto;
+    height: 90px;
     img {
-      height: 40px;
       margin-left: 1rem;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
     }
   }
+}
+
+#page-head-title,
+#home-heading {
+  color: #C00100 !important;
 }

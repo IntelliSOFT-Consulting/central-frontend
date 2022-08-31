@@ -29,7 +29,7 @@ except according to the terms contained in the LICENSE file.
         <div class="logos">
         <img src="../../assets/img/pmi.png" alt="PMI">
         <img src="../../assets/img/moh.png" alt="MOH">
-        <img src="../../assets/img/pmi2.png" alt="kinga-malaria">
+        <!-- <img src="../../assets/img/pmi2.png" alt="kinga-malaria"> -->
       </div>
       </div>
     </div>

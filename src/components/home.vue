@@ -16,7 +16,7 @@ except according to the terms contained in the LICENSE file.
       <div class="logos">
         <img src="../assets/img/pmi.png" alt="PMI">
         <img src="../assets/img/moh.png" alt="MOH">
-        <img src="../assets/img/pmi2.png" alt="kinga-malaria">
+        <!-- <img src="../assets/img/pmi2.png" alt="kinga-malaria"> -->
       </div>
     </div>
     <home-summary/>
@@ -87,7 +87,7 @@ export default {
 {
   "en": {
     "heading": [
-      "Welcome to Central."
+      "PMI Kinga Malaria"
     ]
   }
 }
@@ -98,27 +98,27 @@ export default {
 {
   "cs": {
     "heading": [
-      "Vítejte v Centralu."
+      "PMI Kinga Malaria"
     ]
   },
   "de": {
     "heading": [
-      "Willkommen bei Central"
+      "PMI Kinga Malaria"
     ]
   },
   "es": {
     "heading": [
-      "Bienvenido a Central."
+      "PMI Kinga Malaria"
     ]
   },
   "fr": {
     "heading": [
-      "Bienvenue sur Central"
+      "PMI Kinga Malaria"
     ]
   },
   "it": {
     "heading": [
-      "Benvenuto su Central"
+      "PMI Kinga Malaria"
     ]
   }
 }
